@@ -1,0 +1,1 @@
+gatk --java-options "-Xmx4g" HaplotypeCaller -R ../../S_chilense_reference_rename.fasta -I bamFiles/1963_t1.prop-map.bam -O VCFs/1963_t1.Chr2.g.vcf.gz -ERC GVCF --output-mode EMIT_ALL_CONFIDENT_SITES -L Scaffold_12628_Chr2 
