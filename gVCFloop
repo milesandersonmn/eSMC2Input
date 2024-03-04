@@ -1,0 +1,6 @@
+#cd to wildTomatoData/Schilense
+
+for bam_file in `ls bamFiles/2932*bam | cut -d '/' -f 2`; do
+sampleName=`basename -s .prop-map.bam $bam_file`
+gatk --java-options "-Xmx4g" HaplotypeCaller -R ../../S_chilense_reference_rename.fasta -I bamFiles/$bam_file -O VCFs/${sampleName}.Chr2.g.vcf.gz -ERC GVCF --output-mode EMIT_ALL_CONFIDENT_SITES -L Scaffold_12628_Chr2
+done
