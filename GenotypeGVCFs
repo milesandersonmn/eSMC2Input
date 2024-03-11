@@ -1,0 +1,11 @@
+gatk --java-options "-Xmx4g" GenotypeGVCFs \
+-R ../../S_chilense_reference_rename.fasta \
+-V cohort.g.vcf.gz \
+-O final.vcf.gz
+
+gatk --java-options "-Xmx4g" GenotypeGVCFs \
+-R ../../S_chilense_reference_rename.fasta \
+-V cohort.g.vcf.gz \
+--include-non-variant-sites \
+--sites-only-vcf-output \
+-O final.allsites.nogeno.vcf.gz 
