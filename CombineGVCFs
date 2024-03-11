@@ -1,0 +1,10 @@
+gatk CombineGVCFs \
+-R ../../S_chilense_reference_rename.fasta \
+--variant VCFs/1963_t1.Chr2.g.vcf.gz \
+--variant VCFs/2931_t2.Chr2.g.vcf.gz \
+--variant VCFs/2932_1.Chr2.g.vcf.gz \
+--variant VCFs/3111_t10.Chr2.g.vcf.gz \
+--variant VCFs/4117A_10.Chr2.g.vcf.gz \
+--variant VCFs/4107_3.Chr2.g.vcf.gz \
+--variant VCFs/4330_t12.Chr2.g.vcf.gz \
+-O cohort.g.vcf.gz
