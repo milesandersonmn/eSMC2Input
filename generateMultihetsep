@@ -1,0 +1,13 @@
+for indv in `bcftools query -l final.filtered.vcf.gz`; do
+echo "Extracting sample $indv..."
+bcftools view --samples $indv final.filtered.vcf.gz --output-type z --output-file final.$indv.vcf.gz
+done
+
+python3 generate_multihetsep.py --mask=final.mask.bed.gz \
+final.1963_t1.vcf.gz \
+final.2931_t2.vcf.gz \
+final.2932_1.vcf.gz \
+final.3111_t10.vcf.gz \
+final.4107_3.vcf.gz \
+final.4117A_10.vcf.gz \
+final.4330_t12.vcf.gz > final.chr02.mhs
