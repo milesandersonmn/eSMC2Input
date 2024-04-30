@@ -1,0 +1,12 @@
+bcftools view final.4330_t12.vcf.gz -r Scaffold_12628_Chr2:40000000-40050000 -Oz -o final.4330_t12.Chr02.subset.vcf.gz
+
+bedtools intersect -a final.mask.bed.gz -b subset.bed > final.mask.Chr02.subset.bed
+
+python3 generate_multihetsep.py --mask=final.mask.Chr02.subset.bed.gz \
+final.1963_t1.Chr02.subset.vcf.gz \
+final.2931_t2.Chr02.subset.vcf.gz \
+final.2932_1.Chr02.subset.vcf.gz \
+final.3111_t10.Chr02.subset.vcf.gz \
+final.4107_3.Chr02.subset.vcf.gz \
+final.4117A_10.Chr02.subset.vcf.gz \
+final.4330_t12.Chr02.subset.vcf.gz > final.Chr02.subset.mhs
