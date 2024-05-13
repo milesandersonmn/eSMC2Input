@@ -10,3 +10,8 @@ final.3111_t10.Chr02.subset.vcf.gz \
 final.4107_3.Chr02.subset.vcf.gz \
 final.4117A_10.Chr02.subset.vcf.gz \
 final.4330_t12.Chr02.subset.vcf.gz > final.Chr02.subset.mhs
+
+
+#Awk to subtract 40 million from 2nd column for eSMC 'L' argument
+
+awk -v OFS='\t' '{$2 = $2 - 40000000; print}' final.Chr02.subset.mhs > final.Chr02.subset.edit.mhs
