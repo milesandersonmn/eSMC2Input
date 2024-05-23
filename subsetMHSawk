@@ -1,0 +1,1 @@
+awk -F"\t" '$2>40000000 && $2<45000000' final.chr02.mhs > final.chr02.5Mb.subset.mhs
