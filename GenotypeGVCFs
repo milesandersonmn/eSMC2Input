@@ -9,3 +9,6 @@ gatk --java-options "-Xmx4g" GenotypeGVCFs \
 --include-non-variant-sites \
 --sites-only-vcf-output \
 -O final.allsites.nogeno.vcf.gz 
+
+
+bcftools view --apply-filters .,PASS final.allsites.nogeno.vcf.gz --include 'INFO/DP > 21' --output-type z --output-file final.allsites.nogeno.filtered.vcf.gz
